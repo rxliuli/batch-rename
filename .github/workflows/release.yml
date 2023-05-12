@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - v*.*.*
+    paths:
+      - '.github/workflows/**'
 
 jobs:
   release:
@@ -23,19 +25,21 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+        run:
+          - npm i -g pnpm
+          - pnpm i
 
       - name: build-linux
         if: matrix.os == 'ubuntu-latest'
-        run: npm run build:linux
+        run: pnpm build:linux
 
       - name: build-mac
         if: matrix.os == 'macos-latest'
-        run: npm run build:mac
+        run: pnpm build:mac
 
       - name: build-win
         if: matrix.os == 'windows-latest'
-        run: npm run build:win
+        run: pnpm build:win
 
       - name: release
         uses: softprops/action-gh-release@v1
