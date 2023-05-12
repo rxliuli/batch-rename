@@ -4,7 +4,7 @@
 
 ## 演示
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PL3mft8DEHg/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PL3mft8DEHg/0.jpg)](https://www.youtube.com/watch?v=PL3mft8DEHg)
 
 ## 下载
 
