@@ -12,4 +12,12 @@
 .nav {
   display: flex;
   align-items: center;
+  gap: 16px;
+  padding: 8px;
+}
+
+.nav button {
+  width: fit-content;
+  padding: 4px 8px;
+  margin-bottom: 0;
 }

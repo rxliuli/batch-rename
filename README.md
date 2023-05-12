@@ -1,34 +1,11 @@
-# batch-rename
+# 文件批量重命名
 
-An Electron application with React and TypeScript
+一个批量文件重命名工具，基于强大的 manoco 编辑器而非其他复杂的规则。
 
-## Recommended IDE Setup
+## 演示
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PL3mft8DEHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Project Setup
+## 下载
 
-### Install
-
-```bash
-$ npm install
-```
-
-### Development
-
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+<https://github.com/rxliuli/batch-rename/releases>

@@ -20,7 +20,7 @@ export const EditFileName = () => {
     const rect = boxRef.current.getBoundingClientRect()
     editorRef.current.layout({
       width: rect.width,
-      height: rect.height
+      height: rect.height,
     })
   })
 
@@ -45,9 +45,7 @@ export const EditFileName = () => {
     }
     // electron 则直接写入文件
     console.log('electron')
-    await Promise.all([
-      store.files.map((it, i) => window.api.rename((it as any).path, newFileNames[i]))
-    ])
+    await Promise.all([store.files.map((it, i) => window.api.rename((it as any).path, newFileNames[i]))])
     store.reset()
     alert('重命名完成')
   }
@@ -56,8 +54,9 @@ export const EditFileName = () => {
     <div className={css.edit}>
       <header>
         <nav className={css.nav}>
-          <button onClick={() => store.reset()}>close</button>
-          <button onClick={onSave}>save</button>
+          <button onClick={() => store.reset()}>取消</button>
+          <button onClick={onSave}>重命名</button>
+          <span style={{ marginLeft: 'auto' }}></span>
         </nav>
       </header>
       <section ref={boxRef} className={css.editor}>
