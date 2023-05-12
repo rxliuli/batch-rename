@@ -56,3 +56,6 @@ jobs:
             dist/*.blockmap
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+permissions:
+  contents: write
