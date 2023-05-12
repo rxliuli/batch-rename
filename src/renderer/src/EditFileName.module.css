@@ -1,0 +1,15 @@
+.edit {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.editor {
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
