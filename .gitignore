@@ -4,3 +4,4 @@ out
 *.log*
 .css.d.ts
 .DS_Store
+*.module.css.d.ts
