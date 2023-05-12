@@ -1,6 +1,6 @@
 {
   "name": "batch-rename",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "一个批量文件重命名工具，基于强大的 manoco 编辑器而非其他复杂的规则",
   "main": "./out/main/index.js",
   "author": "rxliuli",
