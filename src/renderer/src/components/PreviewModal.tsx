@@ -1,3 +1,4 @@
+import { t } from '../constants/i18n'
 import css from './PreviewModal.module.css'
 
 interface Props {
@@ -15,11 +16,11 @@ export const PreviewModal = ({ open, close, onSave, children }: Props) => {
   return (
     <div className={css.modal}>
       <div className={css.modalBox}>
-        <div className={css.header}>重命名文件预览</div>
+        <div className={css.header}>{t('preview.title')}</div>
         <div className={css.previewBox}>{children}</div>
         <div className={css.buttonGroup}>
-          <button onClick={close}>返回</button>
-          <button onClick={onSave}>保存</button>
+          <button onClick={close}>{t('preview.cancel')}</button>
+          <button onClick={onSave}>{t('preview.save')}</button>
         </div>
       </div>
     </div>

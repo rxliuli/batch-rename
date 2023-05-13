@@ -1,0 +1,14 @@
+{
+  "home.title": "文件批量重命名",
+  "home.dragTitle": "拖拽文件到这儿或点击选择一些文件",
+  "home.demo": "演示",
+  "edit.rename": "重命名",
+  "edit.cancel": "取消",
+  "edit.error.count": "文件名数量不一致",
+  "edit.success.web": "重命名完成，文件已下载",
+  "edit.success.electron": "重命名完成",
+  "preview.title": "重命名文件预览",
+  "preview.cancel": "返回",
+  "preview.save": "保存",
+  "example": "example"
+}

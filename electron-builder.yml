@@ -1,5 +1,5 @@
 appId: com.rxliuli.batch-rename
-productName: 文件批量重命名
+productName: Batch Rename
 directories:
   buildResources: build
 files:

@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone'
 import classNames from 'classnames'
 import { observer } from 'mobx-react-lite'
 import { useLocalRef } from './utils/mobx'
+import { getLanguage, setLanguage, t } from './constants/i18n'
 
 export const DragFiles = observer(() => {
   const draggable = useLocalRef(false)
@@ -28,11 +29,22 @@ export const DragFiles = observer(() => {
       ev.preventDefault()
     },
   })
+  const language = useLocalRef(getLanguage())
   return (
     <div className={'container'}>
       <header>
         <nav className={css.nav}>
-          <span className={css.logo}>文件批量重命名</span>
+          <span className={css.logo}>{t('home.title')}</span>
+          <select
+            value={language.value}
+            onChange={(ev) => {
+              // console.log('ev.target.value', ev.target.value)
+              setLanguage(ev.target.value as any)
+            }}
+          >
+            <option value="en-US">English</option>
+            <option value="zh-CN">简体中文</option>
+          </select>
           <a href={'https://github.com/rxliuli/batch-rename'} target={'_blank'}>
             GitHub
           </a>
@@ -47,11 +59,11 @@ export const DragFiles = observer(() => {
           })}
         >
           <input {...getInputProps()} />
-          <p>拖拽文件到这儿或点击选择一些文件</p>
+          <p>{t('home.dragTitle')}</p>
         </div>
       </div>
       <section>
-        <h4>演示</h4>
+        <h4>{t('home.demo')}</h4>
         <iframe
           width="560"
           height="315"

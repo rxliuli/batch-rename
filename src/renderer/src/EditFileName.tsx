@@ -8,6 +8,7 @@ import isElectron from 'is-electron'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver'
 import { PreviewModal } from './components/PreviewModal'
+import { t } from './constants/i18n'
 
 loader.config({ monaco })
 
@@ -30,7 +31,7 @@ export const EditFileName = () => {
     console.log('onSave', store.files, store.newFileName)
     const newFileNames = store.newFileName.trim().split('\n')
     if (store.files.length !== newFileNames.length) {
-      alert('文件名数量不一致')
+      alert(t('edit.error.count'))
       return
     }
     // 不是 electron 则压缩为 zip 下载
@@ -42,22 +43,22 @@ export const EditFileName = () => {
       const blob = await zip.generateAsync({ type: 'blob' })
       saveAs(blob, 'files.zip')
       store.reset()
-      alert('重命名完成，文件已下载')
+      alert(t('edit.success.web'))
       return
     }
     // electron 则直接写入文件
     console.log('electron')
     await Promise.all([store.files.map((it, i) => window.api.rename((it as any).path, newFileNames[i]))])
     store.reset()
-    alert('重命名完成')
+    alert(t('edit.success.electron'))
   }
 
   return (
     <div className={css.edit}>
       <header>
         <nav className={css.nav}>
-          <button onClick={() => store.reset()}>取消</button>
-          <button onClick={() => setOpenModal(true)}>重命名</button>
+          <button onClick={() => store.reset()}>{t('edit.cancel')}</button>
+          <button onClick={() => setOpenModal(true)}>{t('edit.rename')}</button>
           <span style={{ marginLeft: 'auto' }}></span>
         </nav>
       </header>

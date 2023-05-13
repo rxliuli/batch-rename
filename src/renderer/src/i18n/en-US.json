@@ -1,0 +1,14 @@
+{
+  "home.title": "Batch File Renaming",
+  "home.dragTitle": "Drag files here or click to select some files",
+  "home.demo": "Demo",
+  "edit.rename": "Rename",
+  "edit.cancel": "Cancel",
+  "edit.error.count": "Inconsistent number of file names",
+  "edit.success.web": "Renaming completed, files have been downloaded",
+  "edit.success.electron": "Renaming completed",
+  "preview.title": "Preview of Renamed Files",
+  "preview.cancel": "Back",
+  "preview.save": "Save",
+  "example": "example"
+}
