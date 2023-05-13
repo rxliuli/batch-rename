@@ -1,0 +1,52 @@
+.modal {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.header {
+  text-align: center;
+  border-bottom: 2px solid #cccccc56;
+}
+
+.previewBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.modalBox {
+  min-width: 50%;
+  max-height: 80%;
+  background: rgb(37, 37, 37);
+  position: relative;
+  border-radius: 4px;
+  padding: 12px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.modalBox button {
+  width: fit-content;
+  padding: 4px 8px;
+  margin-bottom: 0;
+}
+
+.buttonGroup {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.buttonGroup > button {
+  margin-left: 0.5rem;
+}

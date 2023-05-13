@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import css from './EditFileName.module.css'
 import { store } from './store'
 import { DiffEditor, loader } from '@monaco-editor/react'
@@ -7,12 +7,14 @@ import { useEvent } from 'react-use'
 import isElectron from 'is-electron'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver'
+import { PreviewModal } from './components/PreviewModal'
 
 loader.config({ monaco })
 
 export const EditFileName = () => {
   const boxRef = useRef<HTMLElement>(null)
   const editorRef = useRef<monaco.editor.IStandaloneDiffEditor>()
+  const [openModal, setOpenModal] = useState(false)
   useEvent('resize', () => {
     if (!editorRef.current || !boxRef.current) {
       return
@@ -55,7 +57,7 @@ export const EditFileName = () => {
       <header>
         <nav className={css.nav}>
           <button onClick={() => store.reset()}>取消</button>
-          <button onClick={onSave}>重命名</button>
+          <button onClick={() => setOpenModal(true)}>重命名</button>
           <span style={{ marginLeft: 'auto' }}></span>
         </nav>
       </header>
@@ -74,6 +76,13 @@ export const EditFileName = () => {
           }}
         />
       </section>
+      <PreviewModal open={openModal} close={() => setOpenModal(false)} onSave={onSave}>
+        <div>
+          {store.newFileName.split('\n').map((fileName) => (
+            <div>{fileName}</div>
+          ))}
+        </div>
+      </PreviewModal>
     </div>
   )
 }
