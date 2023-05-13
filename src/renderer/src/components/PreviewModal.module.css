@@ -16,14 +16,17 @@
 }
 
 .previewBox {
+  max-height: 80%;
   display: flex;
   justify-content: center;
   margin-top: 8px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .modalBox {
   min-width: 50%;
-  max-height: 80%;
+  max-height: 90%;
   background: rgb(37, 37, 37);
   position: relative;
   border-radius: 4px;
@@ -47,6 +50,6 @@
   padding: 0.5rem;
 }
 
-.buttonGroup > button {
+.buttonGroup>button {
   margin-left: 0.5rem;
 }
