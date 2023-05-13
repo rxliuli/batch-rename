@@ -2,6 +2,7 @@
   "home.title": "文件批量重命名",
   "home.dragTitle": "拖拽文件到这儿或点击选择一些文件",
   "home.demo": "演示",
+  "home.keyboard": "快捷键",
   "edit.rename": "重命名",
   "edit.cancel": "取消",
   "edit.error.count": "文件名数量不一致",

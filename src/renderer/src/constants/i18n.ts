@@ -3,6 +3,8 @@ import { TranslateType } from '../i18n'
 import enUS from '../i18n/en-US.json'
 import zhCN from '../i18n/zh-CN.json'
 import { Lang } from './langs'
+import { html as KeyboardEnUS } from '../i18n/keyboard.md'
+import { html as KeyboardZhCN } from '../i18n/keyboard.zh-cn.md'
 
 export function getLanguage(): Lang {
   // return 'en-US'
@@ -17,7 +19,6 @@ export function setLanguage(lang: Lang) {
 export const langs: { lang: Lang; label: string }[] = [
   { lang: 'en-US', label: 'English' },
   { lang: 'zh-CN', label: '简体中文' },
-  { lang: 'ja-JP', label: '日本語' },
 ]
 
 await i18next.init({
@@ -25,17 +26,34 @@ await i18next.init({
   fallbackLng: 'en-US',
   debug: true,
   resources: {
-    'en-US': { translation: enUS },
-    'zh-CN': { translation: zhCN },
+    'en-US': {
+      translation: {
+        ...enUS,
+        'home.keyboard.desc': KeyboardEnUS,
+      },
+    },
+    'zh-CN': {
+      translation: {
+        ...zhCN,
+        'home.keyboard.desc': KeyboardZhCN,
+      },
+    },
   } as Record<Lang, { translation: any }>,
   keySeparator: false,
 })
+
+type T = TranslateType & {
+  'home.keyboard.desc': {
+    value: 'Keyboard'
+    params: [key: 'home.keyboard.desc']
+  }
+}
 
 /**
  * Get the translated text according to the key
  * @param args
  */
-export function t<K extends keyof TranslateType>(...args: TranslateType[K]['params']): TranslateType[K]['value'] {
+export function t<K extends keyof T>(...args: T[K]['params']): T[K]['value'] {
   // @ts-ignore
   return i18next.t(args[0], args[1])
 }

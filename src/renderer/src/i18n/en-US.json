@@ -2,6 +2,7 @@
   "home.title": "Batch File Renaming",
   "home.dragTitle": "Drag files here or click to select some files",
   "home.demo": "Demo",
+  "home.keyboard": "Keyboard",
   "edit.rename": "Rename",
   "edit.cancel": "Cancel",
   "edit.error.count": "Inconsistent number of file names",

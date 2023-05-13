@@ -11,6 +11,10 @@ export type TranslateType = {
         value: "Demo"
         params: [key: "home.demo"]
     }
+    "home.keyboard": {
+        value: "Keyboard"
+        params: [key: "home.keyboard"]
+    }
     "edit.rename": {
         value: "Rename"
         params: [key: "edit.rename"]

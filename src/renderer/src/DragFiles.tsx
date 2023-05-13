@@ -74,6 +74,14 @@ export const DragFiles = observer(() => {
           allowFullScreen={true}
         ></iframe>
       </section>
+      <section>
+        <h4>{t('home.keyboard')}</h4>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: t('home.keyboard.desc'),
+          }}
+        ></div>
+      </section>
     </div>
   )
 })
