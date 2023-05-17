@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import css from './EditFileName.module.css'
 import { store } from './store'
 import { DiffEditor, loader } from '@monaco-editor/react'
 import * as monaco from 'monaco-editor'
@@ -9,10 +8,11 @@ import JSZip from 'jszip'
 import { saveAs } from 'file-saver'
 import { PreviewModal } from './components/PreviewModal'
 import { t } from './constants/i18n'
+import { useDark } from './utils/useDark'
 
 loader.config({ monaco })
 
-export const EditFileName = () => {
+export const EditView = () => {
   const boxRef = useRef<HTMLElement>(null)
   const editorRef = useRef<monaco.editor.IStandaloneDiffEditor>()
   const [openModal, setOpenModal] = useState(false)
@@ -52,19 +52,26 @@ export const EditFileName = () => {
     store.reset()
     alert(t('edit.success.electron'))
   }
-
+  const { isDark } = useDark()
   return (
-    <div className={css.edit}>
-      <header>
-        <nav className={css.nav}>
-          <button onClick={() => store.reset()}>{t('edit.cancel')}</button>
-          <button onClick={() => setOpenModal(true)}>{t('edit.rename')}</button>
-          <span style={{ marginLeft: 'auto' }}></span>
-        </nav>
-      </header>
-      <section ref={boxRef} className={css.editor}>
+    <div className="flex h-screen flex-col">
+      <nav className="flex items-center justify-between bg-gray-200 px-4 py-2 dark:bg-gray-800">
+        <button
+          className="rounded bg-blue-500 px-4 py-2 text-white dark:bg-blue-300 dark:text-black"
+          onClick={() => store.reset()}
+        >
+          {t('edit.cancel')}
+        </button>
+        <button
+          className="rounded bg-blue-500 px-4 py-2 text-white dark:bg-blue-300 dark:text-black"
+          onClick={() => setOpenModal(true)}
+        >
+          {t('edit.rename')}
+        </button>
+      </nav>
+      <section ref={boxRef} className="flex-grow">
         <DiffEditor
-          theme={'vs-dark'}
+          theme={isDark ? 'vs-dark' : 'vs-light'}
           height={'100%'}
           original={store.files.map((it) => it.name).join('\n')}
           modified={store.newFileName}

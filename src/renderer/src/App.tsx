@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite'
-import { DragFiles } from './DragFiles'
-import { EditFileName } from './EditFileName'
+import { HomeView } from './HomeView'
+import { EditView } from './EditView'
 import { store } from './store'
 
 export const App = observer(() => {
-  return store.step === 0 ? <DragFiles /> : <EditFileName />
+  return <main className={'dark:bg-black dark:text-white'}>{store.step === 0 ? <HomeView /> : <EditView />}</main>
 })
