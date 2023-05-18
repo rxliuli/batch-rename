@@ -84,7 +84,7 @@ export const HomeView = observer(() => {
       <nav className="flex items-center justify-between space-x-4 border-gray-200 py-4">
         <span className="flex-grow text-lg font-bold">{t('home.title')}</span>
         <select
-          className="h-10 rounded bg-white px-2 text-black dark:bg-gray-800 dark:text-white"
+          className="h-10 rounded bg-white px-2 text-black dark:bg-black dark:text-white outline-none"
           value={language.value}
           onChange={(ev) => {
             setLanguage(ev.target.value as any)
