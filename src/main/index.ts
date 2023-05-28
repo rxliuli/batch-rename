@@ -3,6 +3,7 @@ import path, { join } from 'path'
 import * as fs from 'fs/promises'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import { autoUpdater } from 'electron-updater'
 
 function createWindow(): void {
   // Create the browser window.
@@ -14,8 +15,8 @@ function createWindow(): void {
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   })
 
   mainWindow.on('ready-to-show', () => {
@@ -78,3 +79,4 @@ electron.ipcMain.handle('rename', async (_, originPath: string, newName: string)
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
+autoUpdater.checkForUpdatesAndNotify()
