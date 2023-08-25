@@ -22,6 +22,6 @@
 | Add multi-cursor above                                | Ctrl + Alt + Shift + Up   | Command + Alt + Shift + Up         |
 | Move multi-cursor from current line to the line below | Ctrl + Alt + Shift + Down | Command + Alt + Shift + Down       |
 | Add Selection To Next Find Match                      | Ctrl + D                  | Command + D                        |
-| Select All Occurrences of Find Match                  | Ctrl + Shift + L          | Ctrl + Shift + L                   |
+| Select All Occurrences of Find Match                  | Ctrl + Shift + L          | Command + Shift + L                |
 
 Refrence: <https://code.visualstudio.com/docs/getstarted/keybindings>

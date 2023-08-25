@@ -22,6 +22,6 @@
 | 在上方添加多光标             | Ctrl + Alt + Shift + Up   | Command + Alt + Shift + Up         |
 | 将多光标从当前行移动到下一行 | Ctrl + Alt + Shift + Down | Command + Alt + Shift + Down       |
 | 将选择添加到下一个查找匹配   | Ctrl + D                  | Command + D                        |
-| 选择所有查找匹配的出现       | Ctrl + Shift + L          | Ctrl + Shift + L                   |
+| 选择所有查找匹配的出现       | Ctrl + Shift + L          | Command + Shift + L                |
 
 参考：<https://code.visualstudio.com/docs/getstarted/keybindings>

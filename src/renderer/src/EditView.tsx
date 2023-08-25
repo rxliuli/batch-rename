@@ -47,10 +47,9 @@ export const EditView = () => {
       return
     }
     // electron 则直接写入文件
-    console.log('electron')
     await Promise.all([store.files.map((it, i) => window.api.rename((it as any).path, newFileNames[i]))])
     store.reset()
-    alert(t('edit.success.electron'))
+    // alert(t('edit.success.electron'))
   }
   const { isDark } = useDark()
   return (
