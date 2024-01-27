@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html class="dark:bg-black dark:text-white">
   <head>
-    <meta charset="UTF-8" />
-    <title>Batch Renamer</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube.com/"
-    />
-    <script type="module" crossorigin src="./assets/index-f77c933c.js"></script>
-    <link rel="stylesheet" href="./assets/index-c01ec833.css">
-  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+    <meta charset="UTF-8" >
+    <title>Batch Rename</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta       name="description"
+      content="A batch file renaming tool, based on the powerful manoco editor rather than other complex rules."
+    >
+    <script type="module" crossorigin src="/assets/index-6SLMy6FU.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-4PcOKvuf.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-39waFLEq.css">
+  </head>
 
   <body>
-    <div id="root"></div>
-    
+    <div id="app"><div class="container mx-auto px-4"><nav class="flex items-center justify-between space-x-4 border-gray-200 py-4"><span class="flex-grow text-lg font-bold">Batch File Renaming</span><select style="-webkit-appearance:none;" class="h-10 rounded px-2 bg-white text-black dark:bg-black dark:text-white outline-none"><option selected value="en-US">English</option><option value="zh-CN">简体中文</option></select><a href="https://github.com/rxliuli/batch-rename" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="h-8 w-8 cursor-pointer text-blue-500 hover:underline"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></nav><div role="presentation" tabindex="0" class="text-center flex h-64 items-center justify-center rounded-lg border-2 border-dashed border-gray-400"><input multiple type="file" style="display:none;" tabindex="-1" class="hidden"><p class="text-gray-500">Drag files here or click to select some files</p></div><section class="my-8"><h4 class="mb-4 text-xl font-bold">Demo</h4><div style="max-width:890px;height:331px;" class="mx-auto"><iframe src="https://www.youtube.com/embed/PL3mft8DEHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen class="h-full w-full"></iframe></div></section><section class="py-8"><h4 class="mb-4 text-xl font-bold">Keyboard</h4><div class="prose mx-auto dark:prose-dark"><div><table><thead><tr><th>Description</th><th>Windows / Linux</th><th>Mac</th></tr></thead><tbody><tr><td>Show All Commands</td><td>F1</td><td>F1</td></tr><tr><td>Undo</td><td>Ctrl + Z</td><td>Command + Z</td></tr><tr><td>Redo</td><td>Ctrl + Y</td><td>Shift + Command + Z or Command + Y</td></tr><tr><td>Cut</td><td>Ctrl + X</td><td>Command + X</td></tr><tr><td>Copy</td><td>Ctrl + C</td><td>Command + C</td></tr><tr><td>Paste</td><td>Ctrl + V</td><td>Command + V</td></tr><tr><td>Search</td><td>Ctrl + F</td><td>Command + F</td></tr><tr><td>Replace</td><td>Shift + Ctrl + F</td><td>Command + Alt + F</td></tr><tr><td>Select all</td><td>Ctrl + A</td><td>Command + A</td></tr><tr><td>Select downward</td><td>Shift + Down</td><td>Shift + Down</td></tr><tr><td>Select right</td><td>Shift + Right</td><td>Shift + Right</td></tr><tr><td>Select left</td><td>Shift + Left</td><td>Shift + Left</td></tr><tr><td>Select upward</td><td>Shift + Up</td><td>Shift + Up</td></tr><tr><td>Select to the end</td><td>Alt + Shift + Right</td><td>Alt + Shift + Right</td></tr><tr><td>Select to the start</td><td>Alt + Shift + Left</td><td>Alt + Shift + Left</td></tr><tr><td>Align text right</td><td>Ctrl + Shift + Right</td><td>Option + Right</td></tr><tr><td>Align text left</td><td>Ctrl + Shift + Left</td><td>Option + Left</td></tr><tr><td>Add multi-cursor above</td><td>Ctrl + Alt + Up</td><td>Command + Alt + Up</td></tr><tr><td>Add multi-cursor below</td><td>Ctrl + Alt + Down</td><td>Command + Alt + Down</td></tr><tr><td>Add multi-cursor above</td><td>Ctrl + Alt + Shift + Up</td><td>Command + Alt + Shift + Up</td></tr><tr><td>Move multi-cursor from current line to the line below</td><td>Ctrl + Alt + Shift + Down</td><td>Command + Alt + Shift + Down</td></tr><tr><td>Add Selection To Next Find Match</td><td>Ctrl + D</td><td>Command + D</td></tr><tr><td>Select All Occurrences of Find Match</td><td>Ctrl + Shift + L</td><td>Command + Shift + L</td></tr></tbody></table><p>Refrence: <a href="https://code.visualstudio.com/docs/getstarted/keybindings">https://code.visualstudio.com/docs/getstarted/keybindings</a></p></div></div></section></div><script type="isodata"></script></div>
   </body>
 </html>
