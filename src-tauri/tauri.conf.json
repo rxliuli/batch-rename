@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "batch-rename",
+    "productName": "Batch Rename",
     "version": "0.4.1"
   },
   "tauri": {
@@ -26,7 +26,12 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "rxliuli.batch-rename",
+      "identifier": "com.rxliuli.batch-rename",
+      "category": "public.app-category.utilities",
+      "macOS": {
+        "minimumSystemVersion": "12.0",
+        "entitlements": "MyInfo.plist"
+      },
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",

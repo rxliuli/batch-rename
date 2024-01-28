@@ -43,6 +43,7 @@
     "typescript": "^5.0.2",
     "vite": "^5.0.12",
     "vite-plugin-markdown": "^2.2.0",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "zx": "^7.2.3"
   }
 }

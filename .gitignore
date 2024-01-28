@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Certificates.p12
+certificate-base64.txt
+release/
+build.ts
