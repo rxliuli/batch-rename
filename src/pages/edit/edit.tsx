@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'preact/compat'
+import { useRef } from 'preact/compat'
 import { context, originName } from '../../store'
 import { DiffEditor, loader } from '@monaco-editor/react'
 import * as monaco from 'monaco-editor'
@@ -14,12 +14,12 @@ import { isTauri } from '../../utils/isTauri'
 import path from 'pathe'
 import { Button } from './components/Button'
 
+function back() {
+  history.back()
+}
+
 function Toolbar(props: { newFileName: Signal<string> }) {
   const isOpenModal = useSignal(false)
-  const loc = useLocation()
-  function back() {
-    loc.route('/')
-  }
 
   async function onSave() {
     console.log('onSave', context.value, props.newFileName)
@@ -82,13 +82,9 @@ loader.config({ monaco })
 
 function Editor(props: { newFileName: Signal<string> }) {
   const loc = useLocation()
-  function back() {
-    loc.route('/')
-  }
-
   useMount(() => {
     if (context.value.length === 0) {
-      back()
+      loc.route('/', true)
     }
   })
 
